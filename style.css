@@ -1,0 +1,104 @@
+:root{
+  --bg-overlay: rgba(8,15,27,0.55);
+  --card-bg: rgba(255,255,255,0.92);
+  --accent: #0ea5a4; /* teal */
+  --accent-2: #7c3aed; /* purple */
+  --muted: #6b7280;
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.12);
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:#0f172a;}
+
+.page-bg{
+  min-height:100%;
+  background-image: linear-gradient(120deg, rgba(12,26,40,0.55), rgba(12,26,40,0.35)), url('assets/college.jpg');
+  background-size: cover;
+  background-position: center;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+If you prefer to use an online image URL, replace the url(...) above with:
+   url('https://becbapatla.ac.in/path/to/image.jpg')  and cite the source. 
+
+.container{max-width:var(--max-width);margin:0 auto;padding:24px;}
+
+.site-header{
+  padding:18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{margin:0;color:white;font-weight:700;letter-spacing:0.2px}
+.logo span{color:var(--accent);font-weight:600;margin-left:6px}
+
+nav .nav-link{
+  color:rgba(255,255,255,0.95);
+  margin-left:18px;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:500;
+}
+nav .nav-link.active,
+nav .nav-link:hover{
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  box-shadow: inset 0 -3px 0 rgba(255,255,255,0.02);
+  color:white;
+}
+
+/* Hero card */
+.hero-card{
+  margin:48px auto;
+  display:flex;
+  gap:24px;
+  align-items:stretch;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,250,255,0.86));
+  border-radius:18px;
+  padding:28px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+}
+.hero-left{flex:1;padding:8px 12px}
+.hero-right{width:320px;padding:8px 12px;display:flex;flex-direction:column;gap:12px;}
+.hero-card h2{margin:6px 0 12px;font-size:28px;color:#021124}
+.lead{margin:0;color:var(--muted);line-height:1.5}
+.actions{margin-top:18px}
+.btn{
+  display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white;font-weight:600;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(124,58,237,0.18);
+}
+.btn.outline{background:transparent;color:#0f172a;border:2px solid rgba(15,23,42,0.06);box-shadow:none}
+.feature{background:linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.94));padding:14px;border-radius:12px;border:1px solid rgba(2,6,23,0.03)}
+.feature h3{margin:0;font-size:16px;color:#0f172a}
+
+/* Content card (about / attendance) */
+.content-card{background:rgba(255,255,255,0.95);padding:28px;border-radius:14px;margin:36px auto 80px;border:1px solid rgba(2,6,23,0.04);box-shadow:0 10px 30px rgba(2,6,23,0.12)}
+.content-card h2{margin-top:0}
+.muted{color:var(--muted)}
+
+/* Table */
+.table-wrap{overflow:auto;margin-top:18px}
+.styled-table{width:100%;border-collapse:collapse;background:transparent}
+.styled-table thead th{background:linear-gradient(90deg,rgba(14,165,164,0.12),rgba(124,58,237,0.06));padding:12px;text-align:left;border-bottom:1px solid rgba(15,23,42,0.06)}
+.styled-table tbody td{padding:12px;border-bottom:1px dashed rgba(15,23,42,0.04)}
+.styled-table tbody tr:last-child td{border-bottom:none}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.btn.small{padding:8px 12px;font-size:14px;border-radius:8px}
+.btn.small.outline{background:transparent;border:2px solid rgba(15,23,42,0.06);color:#021124}
+.btn.small.alt{background:#ef4444}
+
+/* footer */
+.site-footer{padding:22px 0;color:rgba(255,255,255,0.95);text-align:center;position:relative}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-card{flex-direction:column}
+  .hero-right{width:100%}
+  .container{padding:16px}
+  .styled-table, .table-wrap{font-size:14px}
+}
